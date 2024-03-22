@@ -5,9 +5,8 @@ import imgEllipse from "./assets/Ellipse.png"
  import imgHome from "./assets/Home.png"
 import imgSerenite from "./assets/Serenite.png"
 import imgChercher from "./assets/Chercher.png"
-
-
-
+import imgEtoil from "./assets/Etoil.pgn"
+import imgLocal from "./assets/Local.png"
 
 const Footer = () => {
     return (
@@ -20,10 +19,12 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-x-5">
                     <img src={imgSerenite} alt="suivez nos actualité" />
+                    <img src={imgEtoil} alt="suivez nos actualité" />
                     <span>Séverénité</span>
                 </div>
-                <div className="flex items-center gap-x-5">
-                    <img src={imgHome} alt="suivez nos actualité" />
+                <div className="flex items-center gap-x-5rounded-">
+                    <img src={imgHome} alt="suivez nos actualité" className="w-12 border-2 ronded-full border-red-500 p-12"/>
+                    <img src={imgLocal} alt="suivez nos actualité"  />
                     <span>Proximité</span>
                 </div>
                 <div className="flex items-center gap-x-5">

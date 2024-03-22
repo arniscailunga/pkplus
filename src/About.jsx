@@ -9,13 +9,14 @@ const About = () => {
     return (
         <div className="bg-blue-900 text-white">
             <div className="max-w-[1284px] mx-auto">
-                <div className="flex justify-between py-6 gap-x-6 w-full">
-                    <div className="w-[50%]">
+                <div className="flex justify-between w-full">
+                    <div className="w-[50%] pr-6">
                         <h1 className=" gb-blue-900 text white my-6">Acceuil/Nos prestation/Jardinage à domicil</h1>
-                        <p>
-                            Découvrez nos prestationsde jardinage à domicile   
-                        </p>
-                        <p>Déléguer vos tâches de jardinage et profiter d’une pa
+                        <h3 className="text-2xl text-center">
+                            Découvrez nos prestations 
+                            <strong className="text-blue-400">de jardinage à domicile</strong>  
+                        </h3>
+                        <p className="m-6 ">Déléguer vos tâches de jardinage et profiter d’une pa
                             rcelle parfaitement  propre sans aucune contrainte ?
                             C’est possible grâce à PK Plus. Nous  vous propo
                             sons des prestations d’une qualité irréprochable réa
@@ -29,22 +30,30 @@ const About = () => {
                         <img src={imgJardinier} alt="photo d'un menager" className="w-full" />
                     </div>
                 </div>
-                <div className="flex justify-between gap-x-6  py-6 w-full">
+                <div className="flex justify-between w-full">
                     <div className="w-[50%]">
                         <img src={imgJardinier2} alt="photo d'un menager" className="w-full" />
                     </div>
-                    <div className="w-[50%]">
-                        <h1 className="text white">Notre agence d'homme/de femme de ménage : les services PK</h1>
-                        
-                        <div className="bg-white m-4 w-full h-[90%] rounded-[15px] h-24">
-
+                    <div className="w-[50%] flex flex-col justify-center ">                        
+                        <div className="bg-white m-4 w-full h-[80%] w-[95%] rounded-[15px] h-24 flex flex-col pt-6 items-center">
+                            <h1 className="text-black">Quelle est votre besoin</h1>
+                            <div className="bg-blue-200 p-8 my-8">
+                                <p>Ménage</p>
+                                <div>
+                                </div>
+                                <div>
+                                    <h3>Jardinga</h3>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                         </div>
                        
                     </div>
                 </div>
                 
-            </div>
-        </div>
+         
+       
     );
 };
 

@@ -32,13 +32,15 @@ const Home = () => {
                             <h2>Nos conseils</h2>
                         </div>
                     </div>
-                    <h1 className="my-6">Votre agence d'homme/de femme de ménage : les services PKplus+</h1>
-                    <p>En faisant appel à une agence de femmes/d’hommes de ménage,
-                        exigez plus qu’une simple mise en relation ! Le réseau PKplus, p
-                        résent partout en France, vous fait bénéficier de services à forte valeur ajoutée.
-                        Votre agence locale, c’est une équipe soudée qui prend en charge tous vos besoins,
-                        avec une préoccupation en tête : votre entière satisfaction. Découvrez comment PKplus
-                        vous offre de déléguer votre ménage à domicile en toute simplicité, résultats de qualité professionnelle à la clé…</p>
+                    <div className="text-white-900 font-semibold w-[50%] text-justify flex flex-col ">
+                        <h1 className="my-6 text-center">Votre agence d'homme/de femme de ménage : les services PKplus+</h1>
+                        <p>En faisant appel à une agence de femmes/d’hommes de ménage,
+                            exigez plus qu’une simple mise en relation ! Le réseau PKplus, p
+                            résent partout en France, vous fait bénéficier de services à forte valeur ajoutée.
+                            Votre agence locale, c’est une équipe soudée qui prend en charge tous vos besoins,
+                            avec une préoccupation en tête : votre entière satisfaction. Découvrez comment PKplus
+                            vous offre de déléguer votre ménage à domicile en toute simplicité, résultats de qualité professionnelle à la clé…</p> 
+                    </div>
                 </div>
                 <div className="w-[50%]">
                     <img src={imgMenager} alt="photo d'un menager" className="w-full" />
