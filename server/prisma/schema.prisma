@@ -1,6 +1,9 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,28 +13,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-}
-
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  user   User    @relation(fields: [userId], references: [id])
-  userId Int     @unique
-}
-
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  posts   Post[]
-  profile Profile?
+  Id_User           Int @id @default (autoincrement())
+  nom               String
+  email             String @unique
+  MotDePasse        String
+  Age               Int
+  NiveauEtudes      String
+  Envois            Envoie[]
+  FormationsSuivies SuitFormation[]
+}
+
+model Message {
+  Id_Message Int @id @default (autoincrement())
+  Contenu    String
+  DateEnvoi  DateTime @default (now())
+  Envois     Envoie[]
+}
+
+model Formation {
+  Id_Formation      Int @id @default (autoincrement())
+  Titre             String
+  Description       String
+  NiveauRequis      String
+  FormationsSuivies SuitFormation[]
+}
+
+model Envoie {
+  Id_Envoi Int @id @default (autoincrement())
+  User     User @relation(fields: [Id_User], references: [Id_User])
+  Message  Message @relation(fields: [Id_Message], references: [Id_Message])
+
+  Id_User    Int
+  Id_Message Int
+}
+
+model SuitFormation {
+  Id_Formation Int @id @default (autoincrement())
+  User         User @relation(fields: [Id_User], references: [Id_User])
+  Formation    Formation @relation(fields: [Id_Formation], references: [Id_Formation])
+
+  Id_User      Int
 }

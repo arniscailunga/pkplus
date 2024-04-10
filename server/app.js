@@ -1,12 +1,13 @@
-
 const express = require('express')
 const app = express()
+const userModel = require('./routes/Controller/models/Usermodel.js')
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+app.post("/userRegister", userModel.userRegister)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Voici mon agence${port}`)
 })
